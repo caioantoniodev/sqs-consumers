@@ -1,8 +1,0 @@
-server:
-  port: 8001
-  servlet:
-    context-path: /api/v1/sqs
-spring:
-  cloud:
-    aws:
-      endpoint: http://localhost:4566

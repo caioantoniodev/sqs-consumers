@@ -1,0 +1,10 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /api/v1/sqs
+
+sqs:
+  base-url: http://localhost
+  port: 4566
+  queue-name: example-queue
+  queue-url: ${sqs.base-url}.localstack.cloud:${sqs.port}/000000000000/${sqs.queue-name}

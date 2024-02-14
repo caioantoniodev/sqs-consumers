@@ -1,0 +1,19 @@
+{
+  "name": "node-sqs-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sqs:produce": "node src/sqsProduce.js",
+    "sqs:consume": "node src/sqsConsume.js",
+    "sqs:clear": "node src/sqsClear.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.420.0"
+  }
+}
