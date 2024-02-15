@@ -17,9 +17,19 @@ sqs.receiveMessage(receiveParams, (err, data) => {
                 console.log("Message ID: ", message.MessageId);
                 console.log("Message content: ", message.Body)
                 console.log("Message attributes: ", message.MessageAttributes);
+                removeFromQueue(message);
             })
         } else {
             console.log("No messages published in ", sqs.getQueueUrl)
         }
     }
 })
+
+function removeFromQueue(message) {
+    sqs.deleteMessage({
+        QueueUrl : sqs.getQueueUrl,
+        ReceiptHandle : message.ReceiptHandle
+    }, function(err, data) {
+        err && console.log(err);
+    });
+};
